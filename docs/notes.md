@@ -174,3 +174,71 @@ $ cat ~/linux-practice/logs/create.log
 
 ### Evidence
 ![task6](../screenshots/task6-script-execution.png)
+## Additional Task: Package Installation and Tools
+
+### What I did
+- Updated the package list with `sudo apt update`
+- Installed the `tree` utility with `sudo apt install tree -y`
+- Used `tree` to view my project structure
+
+### Key command outputs
+$ tree
+(Your folder structure shows here)
+
+### Observation
+- `sudo` is required to install packages because it modifies system directories.
+- `-y` automatically answers "yes" to the installation prompt.
+- `tree` is a helpful tool for visualizing directories.
+
+### Evidence
+![package install](../screenshots/task-package-install.png)
+![package install](../screenshots/task-package-tree.png)
+## Additional Task: Permissions and Ownership
+
+### What I did
+- Created `perm_test.txt`
+- Changed permissions using numeric mode: `chmod 700 perm_test.txt`
+- Viewed ownership with `ls -l` and `whoami`
+
+### Key command outputs
+$ ls -l perm_test.txt
+-rw-r--r-- 1 devopsuser devopsuser 0 ... perm_test.txt
+
+$ chmod 700 perm_test.txt
+
+$ ls -l perm_test.txt
+-rwx------ 1 devopsuser devopsuser 0 ... perm_test.txt
+
+### Observation
+- Permissions are read (4), write (2), and execute (1).
+- 700 means the owner (7) gets full access, while the group (0) and others (0) get none.
+- `whoami` shows the current user owning the file.
+
+### Evidence
+![permissions](../screenshots/task-permissions.png)
+## Additional Task: Process and System Monitoring
+
+### What I did
+- Used `ps aux` to view all running processes.
+- Used `top` for live real-time monitoring.
+- Used `free -h` to check RAM usage.
+- Used `df -h` to check disk space.
+
+### Key command outputs
+$ ps aux | head -10
+(Shows processes running by users, including PID, CPU, and memory)
+
+$ free -h
+(Shows total, used, and free RAM in human-readable format)
+
+$ df -h
+(Shows disk partitions and their usage)
+
+### Observation
+- `ps aux` gives a static snapshot of processes, while `top` is dynamic.
+- `free -h` shows memory usage; the `-h` flag makes it human-readable (GB/MB).
+- `df -h` shows filesystem disk usage.
+
+### Evidence
+![system monitoring](../screenshots/task-system-monitoring-1.png)
+![system monitoring](../screenshots/task-system-monitoring-2.png)
